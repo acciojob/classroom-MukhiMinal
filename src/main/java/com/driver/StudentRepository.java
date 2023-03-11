@@ -90,7 +90,7 @@ public class StudentRepository {
                     studentHashMap.remove(sName);
                 }
             }
-            teacherHashMap.remove(tName);
+            teacherStudentHashMap.remove(tName);
         }
   }
 }
