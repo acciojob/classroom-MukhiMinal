@@ -80,15 +80,17 @@ public class StudentRepository {
   public void  deleteAllTeachers(){
 
         HashSet<String> studentSet=new HashSet<>();
-        for(String tName:teacherStudentHashMap.keySet()){
-            for(String sName:teacherStudentHashMap.get(tName)){
+        for(String tName:teacherStudentHashMap.keySet()) {
+            for (String sName : teacherStudentHashMap.get(tName)) {
                 studentSet.add(sName);
             }
-        }
-        for(String sName:studentSet) {
-            if (studentHashMap.containsKey(sName)) {
-                studentHashMap.remove(sName);
+
+            for (String sName : studentSet) {
+                if (studentHashMap.containsKey(sName)) {
+                    studentHashMap.remove(sName);
+                }
             }
+            teacherHashMap.remove(tName);
         }
   }
 }
